@@ -12,8 +12,10 @@ require 'formula'
 class Php < Formula
 
   url "http://php.net/get/php-5.6.3.tar.bz2/from/this/mirror"
-  md5 "b6278e4fb74bae260a2ef2d8a430c8fc"
+  sha1 "05cb83b781b5a1259ee7ba4eda4b6fa48a58ffec"
+#  md5 "b6278e4fb74bae260a2ef2d8a430c8fc"
   homepage "http://php.net"
+  version "5.6.3"
 
   # So PHP extensions don't report missing symbols
   skip_clean 'bin', 'sbin'
@@ -36,19 +38,19 @@ class Php < Formula
   depends_on 'zlib'
   depends_on 'tidy'
 
-  def php_version
-    5.6.3
-  end
+#  def php_version
+#    5.6.3
+#  end
   
-  def config_path
-    etc+"php/"+php_version.to_s
-  end
+#  def config_path
+#    etc+"php/"+php_version.to_s
+#  end
 
   def install
 
     args = ["--prefix=#{prefix}",
             "--localstatedir=#{var}",
-            "--sysconfdir=#{config_path}",
+#            "--sysconfdir=#{config_path}",
             "--libexecdir=#{libexec}",
             "--mandir=#{man}",
             "--disable-cgi",
@@ -73,8 +75,8 @@ class Php < Formula
             "--enable-zip",
             "--with-apxs2=/usr/sbin/apxs",
             "--with-bz2=/usr",
-            "--with-config-file-path=#{config_path}",
-            "--with-config-file-scan-dir=#{config_path}/conf.d",
+#            "--with-config-file-path=#{config_path}",
+#            "--with-config-file-scan-dir=#{config_path}/conf.d",
             "--with-curl",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
@@ -96,7 +98,7 @@ class Php < Formula
             "--with-xmlrpc",
             "--with-zlib=#{Formula['zlib'].opt_prefix}",
 
-]
+           ]
 
 #    system "./buildconf" if build.head?
     system "./configure", *args
@@ -109,11 +111,11 @@ class Php < Formula
 #    ENV.deparallelize # parallel install fails on some systems
     system "make install"
 
-    config_path.install default_config => "php.ini" unless File.exist? config_path+"php.ini"
+#    config_path.install default_config => "php.ini" unless File.exist? config_path+"php.ini"
 
     chmod_R 0775, lib+"php"
 
-    system bin+"pear", "config-set", "php_ini", config_path+"php.ini"
+#    system bin+"pear", "config-set", "php_ini", config_path+"php.ini"
 
   end
 
