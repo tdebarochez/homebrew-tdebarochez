@@ -21,31 +21,16 @@ class Php < Formula
   # So PHP extensions don't report missing symbols
   skip_clean 'bin', 'sbin'
   
-#  depends_on 'autoconf' => :build
-#  depends_on 'automake' => :build
-#  depends_on 're2c' => :build
-#  depends_on 'flex' => :build
-#  depends_on 'homebrew/versions/bison27' => :build
   depends_on 'curl'
   depends_on 'freetype'
   depends_on 'gettext'
+  depends_on 'homebrew/dupes/tidy'
+  depends_on 'homebrew/dupes/zlib'
+  depends_on 'icu4c'
   depends_on 'jpeg'
   depends_on 'libpng'
-#  depends_on 'homebrew/dupes/tidy'
-#  depends_on 'homebrew/dupes/zlib'
   depends_on 'libtool'
   depends_on 'mysql'
-
-  depends_on 'zlib'
-  depends_on 'tidy'
-
-#  def php_version
-#    5.6.3
-#  end
-  
-#  def config_path
-#    etc+"php/"+php_version.to_s
-#  end
 
   def install
 
