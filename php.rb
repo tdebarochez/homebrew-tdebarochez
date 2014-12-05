@@ -13,9 +13,9 @@ class Php < Formula
 
   url "http://php.net/get/php-5.6.3.tar.bz2/from/this/mirror"
   sha1 "05cb83b781b5a1259ee7ba4eda4b6fa48a58ffec"
-#  md5 "b6278e4fb74bae260a2ef2d8a430c8fc"
   homepage "http://php.net"
   version "5.6.3"
+#  revision 1
 
   # So PHP extensions don't report missing symbols
   skip_clean 'bin', 'sbin'
@@ -66,7 +66,6 @@ class Php < Formula
             "--enable-pcntl",
             "--enable-shmop",
             "--enable-soap",
-            "--enable-soap",
             "--enable-sockets",
             "--enable-sysvmsg",
             "--enable-sysvsem",
@@ -103,12 +102,16 @@ class Php < Formula
 #    system "./buildconf" if build.head?
     system "./configure", *args
     
+    inreplace "Makefile",
+    /^INSTALL_IT = \$\(mkinstalldirs\) '([^']+)' (.+) LIBEXECDIR=([^\s]+) (.+)$/,
+    "INSTALL_IT = $(mkinstalldirs) '#{libexec}/apache2' \\2 LIBEXECDIR='#{libexec}/apache2' \\4"
+    
     inreplace 'Makefile' do |s|
       s.change_make_var! "EXTRA_LIBS", "\\1 -lstdc++"
     end
     
     system "make"
-#    ENV.deparallelize # parallel install fails on some systems
+    ENV.deparallelize # parallel install fails on some systems
     system "make install"
 
 #    config_path.install default_config => "php.ini" unless File.exist? config_path+"php.ini"
