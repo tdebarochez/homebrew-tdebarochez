@@ -15,7 +15,7 @@ class Php < Formula
   
   depends_on 'curl'
   depends_on 'freetype'
-  depends_on 'gettext'
+#  depends_on 'gettext'
   depends_on 'homebrew/dupes/tidy'
   depends_on 'homebrew/dupes/zlib'
   depends_on 'icu4c'
@@ -38,17 +38,17 @@ class Php < Formula
             "--enable-exif",
             "--enable-ftp",
             "--enable-gd-native-ttf",
-            "--enable-intl",
+#            "--enable-intl",
             "--enable-mbregex",
             "--enable-mbstring",
             "--enable-pcntl",
-            "--enable-shmop",
+#            "--enable-shmop",
             "--enable-soap",
             "--enable-sockets",
             "--enable-sysvmsg",
             "--enable-sysvsem",
             "--enable-sysvshm",
-            "--enable-wddx",
+#            "--enable-wddx",
             "--enable-zip",
             "--with-apxs2=/usr/sbin/apxs",
             "--with-bz2=/usr",
@@ -57,7 +57,7 @@ class Php < Formula
             "--with-curl",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
-            "--with-gettext=#{Formula['gettext'].opt_prefix}",
+#            "--with-gettext=#{Formula['gettext'].opt_prefix}",
             "--with-iconv-dir=/usr",
             "--with-icu-dir=#{Formula['icu4c'].opt_prefix}",
             "--with-jpeg-dir=#{Formula['jpeg'].opt_prefix}",
