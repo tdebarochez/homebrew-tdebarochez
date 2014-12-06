@@ -1,13 +1,5 @@
 #encoding: utf-8
 
-# /usr/local/Library/Taps/fxbois/homebrew-fxbois
-# brew --config
-# /usr/local/Library/Formula
-
-# to test
-# brew install --verbose --debug php
-# cd `brew --repository`
-
 require 'formula'
 
 class Php < Formula
