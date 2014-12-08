@@ -61,7 +61,7 @@ class Php < Formula
 #            "--with-iconv-dir=/usr",
             "--with-icu-dir=#{Formula['icu4c'].opt_prefix}",
             "--with-jpeg-dir=#{Formula['jpeg'].opt_prefix}",
-            "--with-kerberos=/usr",
+#            "--with-kerberos=/usr",
 #            "--with-libedit",
 #            "--with-mhash",
             "--with-mysql-sock=/tmp/mysql.sock",
