@@ -58,7 +58,7 @@ class Php < Formula
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
 #            "--with-gettext=#{Formula['gettext'].opt_prefix}",
-            "--with-iconv-dir=/usr",
+#            "--with-iconv-dir=/usr",
             "--with-icu-dir=#{Formula['icu4c'].opt_prefix}",
             "--with-jpeg-dir=#{Formula['jpeg'].opt_prefix}",
             "--with-kerberos=/usr",
