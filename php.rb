@@ -35,7 +35,7 @@ class Php < Formula
             "--disable-debug",
 #            "--enable-bcmath",
             "--enable-calendar",
-            "--enable-exif",
+#            "--enable-exif",
 #            "--enable-ftp",
             "--enable-gd-native-ttf",
 #            "--enable-intl",
