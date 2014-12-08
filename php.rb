@@ -38,7 +38,7 @@ class Php < Formula
 #            "--enable-exif",
 #            "--enable-ftp",
             "--enable-gd-native-ttf",
-#            "--enable-intl",
+            "--enable-intl=no",
 #            "--enable-mbregex",
             "--enable-mbstring",
             "--enable-pcntl",
