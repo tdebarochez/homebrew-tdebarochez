@@ -2,7 +2,7 @@
 
 require 'formula'
 
-class Php < Formula
+class Php56 < Formula
 
   url "http://php.net/get/php-5.6.3.tar.bz2/from/this/mirror"
   sha1 "05cb83b781b5a1259ee7ba4eda4b6fa48a58ffec"
