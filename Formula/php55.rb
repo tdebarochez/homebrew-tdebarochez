@@ -41,7 +41,7 @@ class Php55 < Formula
             "--enable-intl=no",
 #            "--enable-mbregex",
             "--enable-mbstring",
-            "--enable-pcntl",
+#            "--enable-pcntl",
 #            "--enable-shmop",
             "--enable-soap",
             "--enable-sockets",
