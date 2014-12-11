@@ -78,7 +78,6 @@ class Php56 < Formula
            ]
 
 #    system "./buildconf" if build.head?
-    system "mkdir -p #{prefix}/etc/php/conf.d"
     system "./configure", *args
     
     inreplace "Makefile",
@@ -96,6 +95,7 @@ class Php56 < Formula
 #    config_path.install default_config => "php.ini" unless File.exist? config_path+"php.ini"
 
     chmod_R 0775, lib+"php"
+    system "mkdir -p #{prefix}/etc/php/conf.d"
 
 #    system bin+"pear", "config-set", "php_ini", config_path+"php.ini"
 
