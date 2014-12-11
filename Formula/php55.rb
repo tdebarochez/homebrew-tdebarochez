@@ -52,8 +52,8 @@ class Php55 < Formula
             "--enable-zip",
             "--with-apxs2=/usr/sbin/apxs",
             "--with-bz2=/usr",
-            "--with-config-file-path=#{config_path}",
-            "--with-config-file-scan-dir=#{config_path}/conf.d",
+            "--with-config-file-path=#{prefix}/etc/php",
+            "--with-config-file-scan-dir=#{prefix}/etc/php/conf.d",
             "--with-curl=#{Formula.factory('curl').prefix}",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
@@ -88,6 +88,7 @@ class Php55 < Formula
       s.change_make_var! "EXTRA_LIBS", "\\1 -lstdc++"
     end
     
+    system "mkdir -p #{prefix}/etc/php/conf.d"
     system "make"
     ENV.deparallelize # parallel install fails on some systems
     system "make install"
