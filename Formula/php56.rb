@@ -15,14 +15,13 @@ class Php56 < Formula
   
   depends_on 'curl'
   depends_on 'freetype'
-#  depends_on 'gettext'
   depends_on 'homebrew/dupes/tidy'
   depends_on 'homebrew/dupes/zlib'
-#  depends_on 'icu4c'
   depends_on 'jpeg'
   depends_on 'libpng'
   depends_on 'libtool'
   depends_on 'mysql'
+  depends_on 'readline'
 
   def install
 
@@ -71,7 +70,7 @@ class Php56 < Formula
             "--with-openssl",
             "--with-pdo-mysql=mysqlnd",
             "--with-png-dir=#{Formula['libpng'].opt_prefix}",
-            "--with-readline",
+            "--with-readline=#{Formula['readline'].opt_prefix}",
             "--with-tidy=#{Formula['tidy'].opt_prefix}",
             "--with-xmlrpc",
             "--with-zlib=#{Formula['zlib'].opt_prefix}",
