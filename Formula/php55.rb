@@ -54,7 +54,7 @@ class Php55 < Formula
             "--with-bz2=/usr",
 #            "--with-config-file-path=#{config_path}",
 #            "--with-config-file-scan-dir=#{config_path}/conf.d",
-            "--with-curl",
+            "--with-curl=#{Formula.factory('curl').prefix}",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
 #            "--with-gettext=#{Formula['gettext'].opt_prefix}",
