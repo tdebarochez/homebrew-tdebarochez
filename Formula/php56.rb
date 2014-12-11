@@ -52,8 +52,8 @@ class Php56 < Formula
             "--enable-zip",
             "--with-apxs2=/usr/sbin/apxs",
             "--with-bz2=/usr",
-            "--with-config-file-path=#{config_path}",
-            "--with-config-file-scan-dir=#{config_path}/conf.d",
+            "--with-config-file-path=#{prefix}/etc/php",
+            "--with-config-file-scan-dir=#{prefix}/etc/php/conf.d",
             "--with-curl=#{Formula.factory('curl').prefix}",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
             "--with-gd",
@@ -78,6 +78,7 @@ class Php56 < Formula
            ]
 
 #    system "./buildconf" if build.head?
+    system "mkdir -p #{prefix}/etc/php/conf.d"
     system "./configure", *args
     
     inreplace "Makefile",

@@ -78,6 +78,7 @@ class Php55 < Formula
            ]
 
 #    system "./buildconf" if build.head?
+    system "mkdir -p #{prefix}/etc/php/conf.d"
     system "./configure", *args
     
     inreplace "Makefile",
@@ -88,7 +89,6 @@ class Php55 < Formula
       s.change_make_var! "EXTRA_LIBS", "\\1 -lstdc++"
     end
     
-    system "mkdir -p #{prefix}/etc/php/conf.d"
     system "make"
     ENV.deparallelize # parallel install fails on some systems
     system "make install"
