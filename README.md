@@ -8,4 +8,6 @@ Installation
 
 1. Install [Homebrew]
 2. Tap this repository ```brew tap tdebarochez/tdebarochez```
-3. Install a formula ```brew install php```
+3.a Install the php-5.6 formula ```brew install php56```
+3.b Install the php-5.5 formula ```brew install php55```
+3.c Install the php-5.4 formula ```brew install php54```
