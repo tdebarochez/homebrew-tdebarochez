@@ -33,3 +33,14 @@ To fix it, I replaced the libcurl's OSX built-in library with the homebrew's ver
 
     $ sudo mv /usr/lib/libcurl.4.dylib{,.original}
     $ sudo ln -s /usr/local/opt/curl/lib/libcurl.4.dylib /usr/lib/libcurl.4.dylib
+
+Configuration
+-------------
+
+Add your own configuration files to this directories :
+
+    $ php --ini
+    Configuration File (php.ini) Path: /usr/local/Cellar/php55/5.5.19/etc/php
+    Loaded Configuration File:         (none)
+    Scan for additional .ini files in: /usr/local/Cellar/php55/5.5.19/etc/php/conf.d
+    Additional .ini files parsed:      (none)
