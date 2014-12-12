@@ -16,10 +16,10 @@ Installation
 Apache (OSX built-in)
 ---------------------
 
-With $PHP_VERSION (ie: `php55`) the version you choose to setup:
+With the `<version>` you choose to setup:
 
     $ sudo mv /usr/libexec/apache2/libphp5.so{,.original}
-    $ sudo ln -s /usr/local/opt/$PHP_VERSION/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
+    $ sudo ln -s /usr/local/opt/<version>/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
     $ sudo apachectl -k restart
 
 Weirdly, I had an issue with libcurl :
@@ -40,7 +40,7 @@ Configuration
 Add your own configuration files to this directories :
 
     $ php --ini
-    Configuration File (php.ini) Path: /usr/local/Cellar/php55/5.5.19/etc/php
+    Configuration File (php.ini) Path: /usr/local/etc/php/<version>/
     Loaded Configuration File:         (none)
-    Scan for additional .ini files in: /usr/local/Cellar/php55/5.5.19/etc/php/conf.d
+    Scan for additional .ini files in: /usr/local/etc/php/<version>/conf.d
     Additional .ini files parsed:      (none)
