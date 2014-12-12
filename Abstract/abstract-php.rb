@@ -3,25 +3,20 @@
 require 'formula'
 
 class AbstractPhp < Formula
-
-  url "http://php.net/get/php-5.6.3.tar.bz2/from/this/mirror"
-  sha1 "05cb83b781b5a1259ee7ba4eda4b6fa48a58ffec"
-  homepage "http://php.net"
-  version "5.6.3"
-#  revision 1
-  # So PHP extensions don't report missing symbols
-  skip_clean 'bin', 'sbin'
-  
-  depends_on 'curl'
-  depends_on 'freetype'
-  depends_on 'homebrew/dupes/tidy'
-  depends_on 'homebrew/dupes/zlib'
-  depends_on 'jpeg'
-  depends_on 'libpng'
-  depends_on 'libtool'
-  depends_on 'mysql'
-  depends_on 'readline'
-  depends_on 'zlib'
+  def self.init
+    # So PHP extensions don't report missing symbols
+    skip_clean 'bin', 'sbin'
+    depends_on 'curl'
+    depends_on 'freetype'
+    depends_on 'homebrew/dupes/tidy'
+    depends_on 'homebrew/dupes/zlib'
+    depends_on 'jpeg'
+    depends_on 'libpng'
+    depends_on 'libtool'
+    depends_on 'mysql'
+    depends_on 'readline'
+    depends_on 'zlib'
+  end
 
   def config_path
     etc+"php/"+php_version.to_s
