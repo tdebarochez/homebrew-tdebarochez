@@ -21,6 +21,7 @@ class AbstractPhp < Formula
   depends_on 'libtool'
   depends_on 'mysql'
   depends_on 'readline'
+  depends_on 'zlib'
 
   def config_path
     etc+"php/"+php_version.to_s
