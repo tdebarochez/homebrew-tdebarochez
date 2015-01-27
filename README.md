@@ -16,7 +16,7 @@ Installation
 Apache (OSX built-in)
 ---------------------
 
-With the `<version>` you choose to setup:
+With the `<version>` (ie: `php55`) you choose to setup:
 
     $ sudo mv /usr/libexec/apache2/libphp5.so{,.original}
     $ sudo ln -s /usr/local/opt/<version>/libexec/apache2/libphp5.so /usr/libexec/apache2/libphp5.so
