@@ -1,6 +1,7 @@
 #encoding: utf-8
 
 require 'formula'
+require 'etc'
 
 class AbstractPhp < Formula
   def self.init
@@ -39,6 +40,7 @@ class AbstractPhp < Formula
             "--enable-calendar",
             "--enable-exif",
             "--enable-ftp",
+            "--enable-fpm",
             "--enable-gd-native-ttf",
             "--enable-inline-optimization",
             "--enable-intl=no",
@@ -59,6 +61,7 @@ class AbstractPhp < Formula
             "--with-config-file-scan-dir=#{config_path}/conf.d",
             "--with-curl=#{Formula.factory('curl').prefix}",
             "--with-freetype-dir=#{Formula['freetype'].opt_prefix}",
+            "--with-fpm-user=#{Etc.getlogin}",
             "--with-gd",
 #            "--with-gettext=#{Formula['gettext'].opt_prefix}",
 #            "--with-iconv-dir=/usr",
