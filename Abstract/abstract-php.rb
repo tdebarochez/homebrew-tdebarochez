@@ -77,7 +77,7 @@ class AbstractPhp < Formula
             "--with-pdo-mysql=mysqlnd",
             "--with-png-dir=#{Formula['libpng'].opt_prefix}",
             "--with-readline=#{Formula['readline'].opt_prefix}",
-            "--with-tidy=#{Formula['tidy'].opt_prefix}",
+            "--with-tidy=#{Formula['tidy-html5'].opt_prefix}",
             "--with-xmlrpc",
             "--with-zlib=#{Formula['zlib'].opt_prefix}",
 
