@@ -9,7 +9,7 @@ class AbstractPhp < Formula
     skip_clean 'bin', 'sbin'
     depends_on 'curl'
     depends_on 'freetype'
-    depends_on 'homebrew/dupes/tidy'
+    depends_on 'tidy-html5'
     depends_on 'homebrew/dupes/zlib'
     depends_on 'jpeg'
     depends_on 'libpng'
