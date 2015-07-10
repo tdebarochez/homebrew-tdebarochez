@@ -5,9 +5,9 @@ require 'formula'
 
 class Php54 < AbstractPhp
   init
-  url "http://php.net/get/php-5.4.41.tar.bz2/from/this/mirror"
-  sha256 "5bc4b45a1280ff80a3cf5b8563716f325cfd0121d7fd25aa54d56ff38b3b8272"
-  version "5.4.41"
+  url "http://php.net/get/php-5.4.43.tar.bz2/from/this/mirror"
+  sha256 "25d7724fb00ad1b520f5bad2173717031153d0a8e3de2c75e7a084c76f8ecd6b"
+  version "5.4.43"
   def php_version
     5.4
   end
